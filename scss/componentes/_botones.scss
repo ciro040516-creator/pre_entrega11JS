@@ -1,0 +1,43 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+
+button{
+    font-size: $med-varia;
+    background-color: $color-varios;
+
+        &:hover{
+            background: $color-gral;
+        }
+}
+
+.button{
+    color: $color-body;
+    font-weight: $font-weight;
+    font-size: $font-primario;
+    padding: $med-primaria;
+}
+
+.add{
+    background-color: $color-gral;
+    color: $color-body;
+    padding: $med-primaria;
+
+    &:hover{
+            background: $color-varios;
+        }
+}
+
+.btn-eliminar{
+    background-color: $color-rechazado;
+    color: $color-body;
+    padding: 0.8rem;
+
+    @include small{
+        padding: $med-primaria;
+    }
+
+    &:hover{
+            background: $color-hover;
+        }
+}
+

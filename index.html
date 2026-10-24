@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Entrega N°9 - JS</title>
+
+    <script defer src="./js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--Link CSS
+    <link rel="stylesheet" href="./css/style.css">-->
+    <!--Link sCSS-->
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <script src="https://kit.fontawesome.com/9e89734234.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <header id="caja-header" class="login">
+        <img src="./img/logo_repartos.jpg" alt="logo_repartos">
+        <nav id="box-seccion"></nav>
+    </header>
+
+    <section class="filtros" id="container-buscador">
+        <input type="search" id="buscador-Item" placeholder="Buscar por nombre...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </section>
+
+    <main>
+        <section id="seccion-mensajes">
+            <h2 id="mensaje-bienvenida"></h2>
+            <p class="mensaje-guia"></p>
+            <h3 class="mensaje-Inicio"></h3>
+        </section>
+
+        <form action="#" method="post" class="form-Ingreso">
+            <label>
+                <i class="fa-solid fa-user"></i>
+                <input type="number" id="ID" placeholder="ID" required>
+            </label>
+            <label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="number" id="password" placeholder="Contraseña" required>
+            </label>
+            <button class="button" id="boton">Ingresar</button>
+        </form>
+
+        <h4 class="mensaje-general"></h4>
+
+    </main>
+
+    <section>
+        <div id="caja-Ayuda">
+            <p id="texto-ayuda"></p>
+        </div>
+    </section>
+
+    <section class="tabla-remito">
+        <form id="registroRemito" class="form-Ingreso">
+            <input type="text" id="nuevoNumero" placeholder="N° de Remito">
+            <input type="text" id="nuevoNombre" placeholder="Nombre">
+            <input type="text" id="nuevaDireccion" placeholder="Dirección">
+            <input type="number" id="nuevoMonto" placeholder="Monto">
+            <button onclick="añadirRemito(event)" class="add">Agregar</button>
+            <small id="mensaje-exito"></small>
+        </form>
+    </section>
+
+    <section>
+        <div class="tabla1">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>N° de Remito</th>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Monto</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-general"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <div class="tabla2">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>N° de Remito</th>
+                        <th>Monto</th>
+                        <th>Estado</th>
+                        <th>Forma de Pago</th>
+                        <th>Final</th>
+                    </tr>
+                </thead>
+                <tbody id="cobranzas-general"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <div class="tabla3">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Efectivo</th>
+                        <th>Transf./MP</th>
+                        <th>Cta. Corriente</th>
+                        <th>No Entregado</th>
+                        <th>Total del Reparto</th>
+                    </tr>
+                </thead>
+                <tbody id="reporte-general"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="contenedor-ruta">
+        <div id="mapa"></div>
+    </section>
+
+    <footer>
+        <p>© 2026 Proyectos Di&Bere. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

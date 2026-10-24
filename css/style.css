@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0a0a0a;
+    background-image: linear-gradient(315deg, #0a0a0a 5%, #0dc700 72%, #fcfcfc 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0.5rem;
+}
+
+a{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+img{
+    border-radius: 50%;
+    height: 40vh;
+    margin: 1rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    width: 100%;
+}
+
+label{
+    margin-bottom: 1.5rem;
+}
+
+input{
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid rgb(0, 92, 13);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+button{
+    font-size: 1.2rem;
+    background-color: black;
+}
+
+button:hover{
+    background: rgb(0, 92, 13);
+}
+
+p{
+font-size: 0.5rem;
+}
+
+footer{
+    font-family: "Cormorant Garamond", serif;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.form-Ingreso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 400px;
+    padding: 2rem 0.5rem;
+    text-align: center;
+    border: solid #f4f4f7;
+    border-radius: 10%;
+    gap: 1rem;
+    background-color: white;
+    box-shadow: 0.5rem 0.6rem rgb(0, 92, 13);
+    
+}
+
+.fa-user, .fa-lock, .fa-magnifying-glass{
+    color: rgb(0, 92, 13);
+    font-size: 1.5rem;
+}
+
+.button{
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+#mensaje-exito{
+    color: rgb(0, 92, 13);
+    font-size: 0.5rem;
+}
+
+
+#box-seccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    list-style: none;
+    gap: 3rem;
+    margin: 0.5rem;
+}
+
+#mensaje-bienvenida{
+    font-family: "Playfair", serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.mensaje-guia{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
+.mensaje-espontaneo{
+    font-family: "Bricolage Grotesque", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+
+#container-buscador {
+    display: none;
+    align-items: center;
+}
+
+.filtros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    gap: 0.5rem;
+    border: solid 0.1rem rgb(0, 92, 13);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgb(0, 92, 13);
+    margin: 0.5rem auto; 
+}
+
+.mensaje-Inicio{
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem ;
+    gap: 1rem;
+}
+
+.mensaje-general{
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 0.5rem ;
+    gap: 1rem;
+}
+
+.mensaje-denegado{
+    color: red;
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+.tabla1, .tabla2, .tabla3{
+    display: none;
+    max-width: 1000px !important;
+    font-family: "Bricolage Grotesque", sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    background-color: white;
+    width: 95vw;
+    gap: 0.5rem;
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+.tabla1 table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla1 th{
+    color: rgb(0, 92, 13);
+    font-weight: bold;
+    padding: 1rem 0.8rem;
+}
+
+.tabla1 td {
+    padding: 1rem 0.8rem; 
+}
+
+.btn-eliminar{
+    background-color: red;
+    color: white;
+    padding: 0.5rem;
+}
+
+.tabla-remito{
+    display: none;
+}
+
+.add{
+    background-color: rgb(0, 92, 13);
+    color: white;
+    padding: 0.5rem;
+}
+
+.tabla2 table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla2 th{
+    color: rgb(0, 92, 13);
+    font-weight: bold;
+    padding: 1rem 0.8rem;
+}
+
+.tabla2 td {
+    padding: 1rem 0.8rem; 
+}
+
+.tabla3 table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla3 th{
+    color: rgb(0, 92, 13);
+    font-weight: bold;
+    padding: 1rem 0.8rem;
+}
+
+.tabla3 td {
+    padding: 1rem 0.8rem; 
+}
+
+.form-Calendario{
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    background-color: white;
+    width: 100%;
+    max-width: 180px;
+    border: solid 0.1rem black;
+}
+
+#caja-Ayuda{
+    display: none;
+}
+#texto-ayuda{
+    font-family: "Google Sans", sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 0.5rem ;
+    gap: 1rem;
+}
+
+
+@media  screen and (max-width: 768px) {
+
+    main{
+    margin: 1rem ;
+    }
+
+    .titulo,
+    .fa-user,
+    .fa-lock{
+        font-size: 1.2rem;
+    }
+
+    #mensaje-bienvenida{
+    font-size: 3rem;
+}
+
+.mensaje-guia{
+    font-size: 1.5rem;
+}
+
+.mensaje-Inicio{
+    font-size: 1.2rem;
+}
+
+#box-seccion{
+    gap: 2rem;
+}
+
+.tabla3{
+    display: none;
+    max-width: 700px !important;
+    font-size: 1.2rem;
+}
+.tabla3 th{
+    color: rgb(0, 92, 13);
+    font-weight: bold;
+    padding: 0.5rem 0.5rem;
+}
+
+.tabla3 td {
+    padding: 0.5rem 0.5rem; 
+}
+}
+
+
+@media  screen and (max-width: 575px) {
+
+    nav{
+        margin: auto;
+        font-size: 1rem;
+    }
+
+    a{
+    font-size: 1.2rem;
+}
+
+    img{
+        height: 20vh;
+    }
+
+    main{
+        margin: 0.5rem;
+    }
+
+    form{
+        max-width: 300px;
+    }
+    #mensaje-bienvenida{
+    font-size: 2rem;
+}
+
+.mensaje-guia{
+    font-size: 1rem;
+}
+
+    .mensaje-Inicio{
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.mensaje-general{
+    font-size: 1rem;
+    margin: 0.5rem;
+    gap: 1rem;
+}
+
+.mensaje-denegado{
+    font-size: 1rem;
+}
+
+#box-seccion{
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+    .filtros{
+    font-size: 0.8rem;
+    max-width: 350px;
+}
+
+.tabla1, .tabla2, .tabla3{
+    display: none;
+    max-width: 400px !important;
+    font-size: 0.7rem;
+    padding: 0;
+}
+
+
+.tabla1 th{
+    padding: 0.5rem 0.2rem;
+}
+
+.tabla1 td {
+    padding: 0.5rem 0.2rem; 
+}
+
+.btn-eliminar{
+    padding: 0.2rem;
+}
+
+.tabla2 th{
+    padding: 0.5rem 0.2rem;
+}
+
+.tabla2 td {
+    padding: 0.5rem 2px; 
+}
+
+.tabla3 th{
+    padding: 0.5rem 0.2rem;
+}
+
+.tabla3 td {
+    padding: 0.5rem 2px; 
+}
+
+.caja-seleccion{
+    font-size: 0.3rem !important;
+    padding: 2px !important;
+    max-width: 50px !important;
+    width: 50px;
+    height: 1rem; 
+}
+
+#texto-ayuda{
+    font-size: 1rem;
+    margin: 0.5rem ;
+    gap: 1rem;
+}
+
+}

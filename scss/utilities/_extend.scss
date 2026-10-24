@@ -1,0 +1,9 @@
+@use './variables' as *;
+
+%info-input{
+    outline: $text-nodeco;
+    border: $text-nodeco;
+    border-bottom: 0.2rem solid $color-varios;
+    font-size: $med-varia;
+    text-align: $text-align;
+}

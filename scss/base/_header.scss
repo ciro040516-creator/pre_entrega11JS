@@ -1,0 +1,54 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+@use '../utilities/extend' as*;
+
+header{
+    @include flex (column, center, center );
+    margin: $med-primaria;
+
+a{
+    font-family: $font-secundario;
+    font-size: $med-terciaria;
+    font-weight: $font-weight;
+    color: $color-body;
+    text-decoration: $text-nodeco;
+
+        &:hover{
+    text-decoration: $text-deco;
+    color: $color-varios;
+}
+}
+
+img{
+    border-radius: $med-radius;
+    height: $med-img;
+    margin: $med-secundaria;
+
+    @include mobile{
+        height: 30vh;
+    }
+
+    @include small{
+        height: 20vh;
+        margin: $med-primaria;
+    }
+}
+
+#box-seccion{
+    @include flex (row, space-around, flex-start);
+    list-style: $text-nodeco;
+    gap: $med-quinta;
+    margin: $med-primaria;
+
+    @include mobile{
+        gap: $med-cuarta;
+    }
+
+    @include small{
+        flex-wrap: wrap;
+        margin: $med-primaria;
+    }
+}
+}
+
+

@@ -1,0 +1,146 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+@use '../utilities/extend' as*;
+@use '../componentes/botones' as *;
+
+
+main{
+    @include flex (column, center, center );
+    margin: $med-primaria;
+    width: $med-width;
+
+label{
+    margin-bottom: $med-terciaria;
+
+input{
+    @extend %info-input;
+    /*
+    outline: $text-nodeco;
+    border: $text-nodeco;
+    border-bottom: 0.2rem solid $color-varios;
+    font-size: $med-varia;
+    text-align: $text-align;*/
+}
+}
+// Aqui va button
+
+.form-Ingreso{
+    @include flex (column, center, center );
+    margin: auto;
+    font-family: $font-terciario;
+    max-width: $med-form;
+    padding: $med-cuarta $med-primaria;
+    text-align: $text-align;
+    border: solid $color-body;
+    border-radius: 10%;
+    gap: $med-secundaria;
+    background-color: $color-body;
+    box-shadow: $med-primaria $med-primaria $color-varios;
+//Aqui va el .button
+}
+
+.fa-user, .fa-lock{
+    color: $color-gral;
+    font-size: $med-terciaria;
+
+    @include mobile{
+        font-size: 1.2rem;
+    }
+}
+
+.mensaje-denegado{
+    color: $color-rechazado;
+    font-size: $med-cuarta;
+    text-align: $text-align;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    font-family: $font-primario;
+
+    @include mobile{
+        font-size: $med-terciaria;
+    }
+
+    @include small{
+        font-size: $med-varia;
+    }
+}
+
+.mensaje-espontaneo{
+    font-family: $font-terciario;
+    text-align: $text-align;
+    font-weight: $font-weight;
+    font-size: $med-cuarta;
+    margin: $med-primaria;
+
+    @include mobile{
+        font-size: $med-terciaria;
+    }
+
+    @include small{
+        font-size: $med-varia;
+    }
+}
+
+#seccion-mensajes{
+#mensaje-bienvenida{
+    font-family: $font-primario;
+    text-align: $text-align;
+    font-weight: $font-weight;
+    font-size: $med-sexta;
+
+    @include mobile{
+        font-size: $med-quinta;
+    }
+
+    @include small{
+        font-size: $med-cuarta;
+    }
+}
+
+.mensaje-guia{
+    font-family: $font-secundario;
+    font-size: $med-cuarta;
+    text-align: $text-align;
+    margin: $med-secundaria;
+    padding: $med-primaria;
+
+    @include mobile{
+        font-size: $med-terciaria;
+    }
+
+    @include small{
+        font-size: $med-varia;
+        margin: $med-primaria;
+    }
+}
+
+.mensaje-Inicio{
+    font-weight: $font-weight;
+    text-align: $text-align;
+    font-size: $med-terciaria;
+    margin: $med-secundaria;
+    gap: $med-secundaria;
+
+    @include mobile{
+        font-size: $med-varia;
+    }
+
+    @include small{
+        font-size: $med-secundaria;
+        margin: $med-primaria;
+    }
+}
+}
+
+.mensaje-general{
+    text-align: $text-align;
+    font-style: $font-style;
+    font-size: $med-terciaria;
+    margin: $med-primaria;
+    gap: $med-secundaria;
+
+    @include mobile{
+        font-size: $med-varia;
+    }
+}
+}

@@ -1,0 +1,191 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
+@use '../utilities/extend' as*;
+@use '../componentes/botones' as *;
+
+.filtros{
+    @include flex1(center, center);
+    font-size: $med-secundaria;
+    background-color: $color-body;
+    width: $med-width;
+    max-width: $med-buscador;
+    gap: $med-primaria;
+    border: solid 0.1rem rgb(0, 92, 13);
+    padding: $med-primaria $med-secundaria;
+    box-shadow: 0 0.2rem $med-primaria rgb(0, 92, 13);
+    margin: $med-primaria auto;
+
+    @include small{
+        max-width: 350px;
+    }
+
+input{
+    @extend %info-input;
+    /*
+    outline: $text-nodeco;
+    border: $text-nodeco;
+    border-bottom: 0.1rem solid $color-varios;
+    font-size: $med-varia;
+    text-align: $text-align;*/
+
+    @include small{
+        font-size: $med-secundaria;
+    }
+}
+    .fa-magnifying-glass{
+    color: $color-gral;
+    font-size: $med-terciaria;
+
+    @include mobile{
+        font-size: 1.2rem;
+    }
+}
+
+&#container-buscador {
+    display: none;
+    align-items: center;
+}
+}
+
+.tabla-remito{
+    display: none;
+
+.form-Ingreso{
+    @include flex (column, center, center );
+    margin: auto;
+    max-width: $med-form;
+    padding: $med-cuarta $med-primaria;
+    text-align: $text-align;
+    border: solid $color-body;
+    border-radius: 10%;
+    gap: $med-secundaria;
+    background-color: $color-body;
+    box-shadow: $med-primaria $med-primaria $color-varios;
+
+    @include small{
+        max-width: 300px;
+    }
+
+    input{
+    outline: $text-nodeco;
+    border: $text-nodeco;
+    border-bottom: 0.1rem solid $color-varios;
+    font-size: $med-varia;
+    text-align: $text-align;
+}
+//Aqui va el boton add
+
+#mensaje-exito{
+    color: $color-varios;
+    font-size: 0.8rem;
+}
+}
+}
+
+#caja-Ayuda{
+    display: none;
+
+#texto-ayuda{
+    font-family: $font-secundario;
+    text-align: $text-align;
+    font-style: $font-style;
+    font-size: $med-cuarta;
+    margin: $med-primaria ;
+    gap: $med-secundaria;
+
+    @include mobile{
+        font-size: $med-terciaria;
+    }
+
+    @include small{
+        font-size: $med-varia;
+    }
+}
+}
+
+.tabla1, .tabla2, .tabla3{
+    display: none;
+    max-width: $med-tabla !important;
+    font-family: $font-terciario;
+    text-align: $text-align;
+    font-size: $med-terciaria;
+    color: $color-hover;
+    background-color: $color-body;
+    width: 95vw;
+    gap: $med-primaria;
+    margin: $med-terciaria auto;
+    padding: $med-secundaria;
+
+    @include mobile{
+        font-size: $med-varia;
+        padding: $med-primaria;
+    }
+
+    @include small{
+        display: none;
+        max-width: 400px !important;
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+}
+
+.tabla1{
+    table{
+    width: $med-width;
+    border-collapse: $border-collapse;
+}
+
+    th{
+    color: $color-gral;
+    font-weight: $font-weight;
+    padding: $med-secundaria 0.8rem;
+
+    @include small{
+        padding: $med-primaria 2px; 
+    }
+}
+
+    td {
+    padding: $med-secundaria 0.8rem; 
+
+    @include small{
+        padding: $med-primaria 2px; 
+    }
+}
+
+//Aqui va el boton de eliminar
+}
+
+.tabla2, .tabla3{
+    table{
+    width: $med-width;
+    border-collapse: $border-collapse;
+}
+
+    th{
+    color: $color-gral;
+    font-weight: $font-weight;
+    padding: $med-secundaria 0.8rem;
+
+    @include small{
+        padding: $med-primaria 2px; 
+    }
+}
+
+    td {
+    padding: $med-secundaria 0.8rem;
+    
+    @include small{
+        padding: $med-primaria 2px; 
+    }
+}
+.caja-seleccion, .caja-seleccion1{//ver porque no me toma el scss en estado
+    @include small{
+    font-size: $med-primaria !important;
+    padding: 2px !important;
+    max-width: 50px !important;
+    width: 50px;
+    height: 1rem;
+    }
+}
+}
