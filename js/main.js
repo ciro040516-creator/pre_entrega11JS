@@ -19,34 +19,62 @@ mainIncio.prepend(tituloInicial, guiaInicial, mensajeInicio);
 
 
 //Menu
-const repartosMenu =  [ 'Registro', 'Cobranzas', 'Informes', 'Ruta'];
+let repartosMenu = [];//json
 const boxIngreso = document.querySelector("#box-seccion");
-function processMenu(opciones) {
+async function processMenu() {
+    try {
+        const response = await fetch("./data/usuarios.json")
+
+        if (!response.ok){
+            throw new Error(`Error al cargar el JSON: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        repartosMenu = data.repartosMenu;
+
     boxIngreso.innerHTML = "";
-    opciones.forEach((fila) => { 
+    repartosMenu.forEach((fila) => { 
         const itemHtml = `<li><a href="#" onclick="cambiarAyuda('${fila.trim()}')">${fila.trim()}</a></li>`;
 
     boxIngreso.innerHTML += itemHtml;
 });
-}
+    } catch (error) {
+        boxIngreso.innerHTML = "<li>Error al cargar el menú.</li>";
+    }
+    };
 
-const guiasMenu = {
-    'Registro': 'Añade los remitos/facturas colocando el numero, el nombre, la dirección y el monto final. Estos datos se reflejaran en la tabla inferior. Si cometes un error, usa el botón rojo para eliminarlos y volver a ingresar los datos nuevamente.',
-    'Cobranzas': 'Gestiona el estado de tus entregas y los pagos recibidos. Los descuentos se aplicaran según la forma de pago indicada y se reflejará el monto final en la columna "Final".',
-    'Informes': 'Revisa el reporte de tus entregas y el dinero recaudado según el método de pago seleccionado.',
-    'Ruta': 'Consulta tu ruta y el orden para optimizado tus entregas.',
-};
+//Mensaje con instrucciones de ayuda para usar cada item del menu
+let guiasMenu = {};
+async function cambiarAyuda(seccion) {
+    try {
+        const response = await fetch("./data/usuarios.json")
 
-function cambiarAyuda(seccion) {
+        if (!response.ok){
+            throw new Error(`Error al cargar el JSON: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        guiasMenu = data.guiasMenu;
+
     const mensajeGuia = document.querySelector("#texto-ayuda"); 
     if (mensajeGuia && guiasMenu[seccion]) {
         mensajeGuia.innerText = guiasMenu[seccion];
     }
+} catch (error){
+
+    const mensajeGuia = document.querySelector("#texto-ayuda");
+        if (mensajeGuia) {
+            mensajeGuia.innerText = "Error al cargar la ayuda.";
+        }
+}
 };
 
 
 
 //Aqui trabajo mi acceso con los datos necesarios para cada id y password
+let loginFree = [];
 const inputID = document.getElementById('ID');
 const inputPassword = document.getElementById('password');
 const ingreso = document.getElementById('boton');
@@ -70,7 +98,7 @@ try {
 
     const usuarios = await response.json();
 
-    const usuarioFree = usuarios.find((user) => user.id === ingresoId && user.password === ingresoPassword);
+    const usuarioFree = usuarios.loginFree.find((user) => user.id === ingresoId && user.password === ingresoPassword);
 
     if (!usuarioFree) {
     throw new Error("Usuario y/o contraseña incorrectos");
