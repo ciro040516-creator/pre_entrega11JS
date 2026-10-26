@@ -138,8 +138,6 @@ const datosCobranzas = localStorage.getItem("Datos Lista");
 
     listaPago.forEach((remito, index) => {
         const pagoGuardado = remito.formaPago || "";
-
-        const estadoGuardado = remito.estado || "";
         
         const finalGuardado = remito.final !== undefined ? `$${remito.final.toFixed(2)}` : "-";
 
@@ -147,14 +145,6 @@ const datosCobranzas = localStorage.getItem("Datos Lista");
             <tr>
                 <td>${remito.numero}</td>
                 <td>$${remito.monto}</td>
-                <td>
-                    <select id="estado-${index} class="caja-seleccion1">
-                        <option value="">Seleccionar...</option>
-                        <option value="En ruta" ${estadoGuardado === "En ruta" ? "selected" : ""}>En Ruta</option>
-                        <option value="Entregado" ${estadoGuardado === "Entregado" ? "selected" : ""}>Entregado</option>
-                        <option value="No Entregado" ${estadoGuardado === "No Entregado" ? "selected" : ""}>No Entregado</option>
-                    </select>
-                </td>
                 <td>
                     <select id="pago-${index}" onchange="descuentoAplicado(${index}, ${remito.monto})" class="caja-seleccion">
                         <option value="">Seleccionar...</option>
@@ -249,20 +239,15 @@ let totalFinal = 0;
 
     if (resumen.formaPago === "Efectivo") {
         totalEfectivo += monto;
-    } else if (resumen.formaPago === "Transferencia" || resumen.formaDePago === "Regresa") {
+    } else if (resumen.formaPago === "Transferencia") {
         totalTransf += monto;
     } else if (resumen.formaPago === "Cta. Corriente") {
         totalCtaCte += monto;
-    }
-
-    if (resumen.formaPago === "Regresa" || 
-        resumen.estado === "No Entregado" || 
-        pedidoNoEntregado > 0) {
-        totalNoEntregado += (pedidoNoEntregado > 0) ? pedidoNoEntregado : montoFinal;
+    } else if (resumen.formaPago === "Regresa") {
+        totalNoEntregado += monto;
     }
     });
     
-
     const filaUnica = `
     <tr>
         <td>$${totalEfectivo.toFixed(2)}</td>
@@ -289,18 +274,80 @@ document.addEventListener("click", (e) => {
 }
 });
 
-//Ruta
+//Observaciones
+
+function añadirObservac(e) {
+    e.preventDefault();
+
+    const formObservac = document.getElementById('registroObservac');
+    const textareaGuardar = document.getElementById('caja-texto');
+    const textoGuardado = document.getElementById('textoGuardado');
+    const observaciones = textareaGuardar.value.trim();
+
+    if (observaciones !== "") {
+
+        if (textoGuardado.innerHTML === "") {
+            textoGuardado.innerHTML = observaciones;
+        } else {
+            textoGuardado.innerHTML += "<br>" + observaciones;
+        }
+        localStorage.setItem('notasDeReparto', textoGuardado.innerHTML);
+        formObservac.reset();
+
+    Swal.fire({
+    title: "Ingreso de datos exitoso",
+    text: "Los datos se han guardado correctamente",
+    icon: "success"
+    });
+
+        setTimeout(() => {
+            if (typeof avisoExito !== 'undefined') avisoExito.innerText = "";
+        }, 3000); 
+    
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, ingrese un texto antes de guardar.",
+            icon: "error"
+        });
+    }
+};
+
+window.añadirObservac = añadirObservac;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textoGuardado = document.getElementById('textoGuardado');
+    const notasAlmacenadas = localStorage.getItem('notasDeReparto');
+    
+    if (notasAlmacenadas && textoGuardado) {
+        textoGuardado.innerHTML = notasAlmacenadas;
+    }
+});
+
+function borrarObservac(e) {
+    if (e) e.preventDefault();
+
+    const textoGuardado = document.getElementById('textoGuardado');
+
+    if (textoGuardado) {
+        textoGuardado.innerHTML = "";
+    }
+
+    localStorage.removeItem('notasDeReparto');
+};
+
+window.borrarObservac = borrarObservac;
 
 document.addEventListener("click", (e) => {
-    if (e.target.textContent.trim() === "Ruta") {
+    if (e.target.textContent.trim() === "Observaciones") {
     
     e.preventDefault(); 
     
-    const seccionReportes = document.querySelector("");
-    if (seccionReportes) {
-        seccionReportes.style.display = (seccionReportes.style.display === "block") ? "none" : "block";
+    const seccionObservac = document.querySelector("#contenedor-observaciones");
+    if (seccionObservac) {
+        seccionObservac.style.display = (seccionObservac.style.display === "block") ? "none" : "block";
 
-        if (seccionReportes.style.display === "block") tablaReportes();
+        if (seccionObservac.style.display === "block");
     }
 }
 });

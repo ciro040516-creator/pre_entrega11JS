@@ -14,6 +14,7 @@
     padding: $med-primaria $med-secundaria;
     box-shadow: 0 0.2rem $med-primaria rgb(0, 92, 13);
     margin: $med-primaria auto;
+    color: #000000;
 
     @include small{
         max-width: 350px;
@@ -21,12 +22,6 @@
 
 input{
     @extend %info-input;
-    /*
-    outline: $text-nodeco;
-    border: $text-nodeco;
-    border-bottom: 0.1rem solid $color-varios;
-    font-size: $med-varia;
-    text-align: $text-align;*/
 
     @include small{
         font-size: $med-secundaria;
@@ -92,6 +87,7 @@ input{
     font-size: $med-cuarta;
     margin: $med-primaria ;
     gap: $med-secundaria;
+    color: yellow;
 
     @include mobile{
         font-size: $med-terciaria;
@@ -139,6 +135,7 @@ input{
     color: $color-gral;
     font-weight: $font-weight;
     padding: $med-secundaria 0.8rem;
+    border: 1px solid #000000;
 
     @include small{
         padding: $med-primaria 2px; 
@@ -147,6 +144,7 @@ input{
 
     td {
     padding: $med-secundaria 0.8rem; 
+    border: 1px solid #000000;
 
     @include small{
         padding: $med-primaria 2px; 
@@ -166,6 +164,7 @@ input{
     color: $color-gral;
     font-weight: $font-weight;
     padding: $med-secundaria 0.8rem;
+    border: 1px solid #000000;
 
     @include small{
         padding: $med-primaria 2px; 
@@ -174,12 +173,13 @@ input{
 
     td {
     padding: $med-secundaria 0.8rem;
+    border: 1px solid #000000;
     
     @include small{
         padding: $med-primaria 2px; 
     }
 }
-.caja-seleccion, .caja-seleccion1{//ver porque no me toma el scss en estado
+.caja-seleccion{
     @include small{
     font-size: $med-primaria !important;
     padding: 2px !important;
@@ -187,5 +187,50 @@ input{
     width: 50px;
     height: 1rem;
     }
+}
+}
+
+.observaciones{
+    display: none;
+}
+
+#contenedor-observaciones{
+    .form-Observac, .card{
+        @include flex (column, center, center );
+    margin: $med-secundaria;
+    max-width: $med-tabla;
+    width: $med-width;
+    padding: $med-cuarta $med-primaria;
+    text-align: $text-align;
+    color: black;
+    border: solid $color-body;
+    gap: $med-secundaria;
+    background-color: $color-body;
+    box-shadow: $med-primaria $med-primaria $color-varios;
+
+    @include small{
+        max-width: 500px;
+    }
+
+    #caja-texto{
+    @include flex1(center, center);
+    color: black;
+    font-size: $med-terciaria;
+    background-color: $color-body;
+    width: $med-width;
+    max-width: $med-tabla;
+    gap: $med-primaria;
+    border: solid 0.1rem rgb(0, 92, 13);
+    padding: $med-primaria $med-secundaria;
+    box-shadow: 0 0.2rem $med-primaria rgb(0, 92, 13);
+    margin: $med-primaria auto;
+    }
+
+    .btn-eliminar{
+        display: block;
+        margin-top: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        }
 }
 }

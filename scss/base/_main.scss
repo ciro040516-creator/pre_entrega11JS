@@ -8,18 +8,13 @@ main{
     @include flex (column, center, center );
     margin: $med-primaria;
     width: $med-width;
+    color: white;
 
 label{
     margin-bottom: $med-terciaria;
 
 input{
     @extend %info-input;
-    /*
-    outline: $text-nodeco;
-    border: $text-nodeco;
-    border-bottom: 0.2rem solid $color-varios;
-    font-size: $med-varia;
-    text-align: $text-align;*/
 }
 }
 // Aqui va button
@@ -49,7 +44,7 @@ input{
 }
 
 .mensaje-denegado{
-    color: $color-rechazado;
+    color: yellow;
     font-size: $med-cuarta;
     text-align: $text-align;
     font-style: $font-style;

@@ -12,6 +12,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     min-height: $med-body;
-    color: $color-body;
+    color: white;
     @include flex (column, center, center );
 }

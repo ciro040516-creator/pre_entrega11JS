@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="./css/style.css">-->
     <!--Link sCSS-->
     <link rel="stylesheet" href="./css/estilos.css">
+    <!--Link Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
     <script src="https://kit.fontawesome.com/9e89734234.js" crossorigin="anonymous"></script>
 
@@ -96,7 +98,6 @@
                     <tr>
                         <th>N° de Remito</th>
                         <th>Monto</th>
-                        <th>Estado</th>
                         <th>Forma de Pago</th>
                         <th>Final</th>
                     </tr>
@@ -123,13 +124,27 @@
         </div>
     </section>
 
-    <section id="contenedor-ruta">
-        <div id="mapa"></div>
+    <section id="contenedor-observaciones" class="observaciones">
+        <div id="texto">
+            <form id="registroObservac" class="form-Observac">
+                <textarea name="caja-texto" id="caja-texto" cols="200"
+                    placeholder="Ingrese sus observaciones aqui"></textarea>
+                <button onclick="añadirObservac(event)" class="add">Guardar</button>
+            </form>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <span id="textoGuardado">Aquí se guardaran sus observaciones</span>
+                <button onclick="borrarObservac(event)" class="btn-eliminar">Eliminar observaciones guardadas</button>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>© 2026 Proyectos Di&Bere. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 

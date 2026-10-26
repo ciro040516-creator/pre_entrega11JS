@@ -6,20 +6,18 @@ tituloInicial.textContent = "Simulador de Repartos";
 
 const guiaInicial = document.querySelector(".mensaje-guia");
 guiaInicial.innerText = `Bienvenidos!
-                        Agilice su jornada laboral con nuestro simulador, es una herramienta diseñada para llevar un registro seguro y eficiente de sus operaciones. 
-                        Aquí podrán cargar los datos de sus remitos/facturas para organizar sus recaudaciones de forma eficiente.
-                        El sistema calculará el total de sus paquetes, les permitirá seleccionar las formas de pago y les mostrará el monto final a rendir.
-                        Muy pronto integraremos nuevas soluciones para seguir acompañando y mejorardo su actividas día a día.
+                        Nuestro simulador es una herramienta diseñada para llevar un registro seguro y confiable de sus operaciones.
+                        Aquí podrán cargar los datos de sus remitos y/o facturas para organizar los pedidos y recaudaciones.
+                        El sistema calculará el total de los pedidos, le permitirá seleccionar las formas de pago y le mostrará el monto final a rendir.
+                        Muy pronto integraremos la opción de ruta donde podrá ver los puntos de entrega.
                         Gracias por elegirnos.`
 
 const mensajeInicio = document.querySelector(".mensaje-Inicio");
 mensajeInicio.textContent = "Para ingresar coloque la ID y la Contraseña Habilitada."
-
 mainIncio.prepend(tituloInicial, guiaInicial, mensajeInicio);
 
-
 //Menu
-let repartosMenu = [];//json
+let repartosMenu = [];
 const boxIngreso = document.querySelector("#box-seccion");
 async function processMenu() {
     try {
@@ -28,9 +26,7 @@ async function processMenu() {
         if (!response.ok){
             throw new Error(`Error al cargar el JSON: ${response.status}`);
         }
-
         const data = await response.json();
-        
         repartosMenu = data.repartosMenu;
 
     boxIngreso.innerHTML = "";
@@ -55,7 +51,6 @@ async function cambiarAyuda(seccion) {
         }
 
         const data = await response.json();
-
         guiasMenu = data.guiasMenu;
 
     const mensajeGuia = document.querySelector("#texto-ayuda"); 
@@ -71,9 +66,7 @@ async function cambiarAyuda(seccion) {
 }
 };
 
-
-
-//Aqui trabajo mi acceso con los datos necesarios para cada id y password
+//Acceso para cada id y password
 let loginFree = [];
 const inputID = document.getElementById('ID');
 const inputPassword = document.getElementById('password');
@@ -83,7 +76,6 @@ const cajaBuscador = document.getElementById("container-buscador")
 const itemBusqueda = document.getElementById("buscador-Item");
 
 ingreso.addEventListener('click', async function acceso(e){
-
     e.preventDefault();
 
 const ingresoId = Number(inputID.value); 
@@ -97,7 +89,6 @@ try {
     }
 
     const usuarios = await response.json();
-
     const usuarioFree = usuarios.loginFree.find((user) => user.id === ingresoId && user.password === ingresoPassword);
 
     if (!usuarioFree) {
@@ -125,19 +116,19 @@ try {
                     //indicaciones del buscador
                     cajaBuscador.style.display = "flex";
 
-        itemBusqueda.addEventListener("input", () => {
-            const texto = itemBusqueda.value.toLowerCase().trim();
-            const fila = tabla1.querySelectorAll("tr");
+                    itemBusqueda.addEventListener("input", () => {
+                    const texto = itemBusqueda.value.toLowerCase().trim();
+                    const fila = tabla1.querySelectorAll("tr");
 
-            fila.forEach((fila) =>{
-                const containerFila = fila.innerText.toLowerCase();
+                    fila.forEach((fila) =>{
+                    const containerFila = fila.innerText.toLowerCase();
 
-        if (containerFila.includes(texto)) {
-            fila.style.display = "";
-        } else {
-            fila.style.display = "none";
-        }
-    });
+                    if (containerFila.includes(texto)) {
+                    fila.style.display = "";
+                    } else {
+                    fila.style.display = "none";
+                    }
+                });
 });
 } catch (error) {
         const formInicial = document.querySelector('.form-Ingreso');
@@ -154,11 +145,10 @@ try {
     mainAviso.appendChild(boxAviso);
     }
 
-        boxAviso.className = "mensaje-denegado";
-
-        let cuentaRegresiva = 5;
-        boxAviso.innerHTML = `ACCESO DENEGADO: Los datos ingresados son incorrectos. El formulario reaparecerá en: <strong>${cuentaRegresiva}</strong>s.`;
-  // Intervalo
+    boxAviso.className = "mensaje-denegado";
+    let cuentaRegresiva = 5;
+    boxAviso.innerHTML = `ACCESO DENEGADO: Los datos ingresados son incorrectos. El formulario reaparecerá en: <strong>${cuentaRegresiva}</strong>s.`;
+    
         const conteo = setInterval(() => {
         cuentaRegresiva--;
 

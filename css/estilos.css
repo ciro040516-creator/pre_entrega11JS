@@ -128,17 +128,10 @@ main {
   align-items: center;
   margin: 0.5rem;
   width: 100%;
+  color: white;
 }
 main label {
   margin-bottom: 1.5rem;
-}
-main label input {
-  /*
-  outline: $text-nodeco;
-  border: $text-nodeco;
-  border-bottom: 0.2rem solid $color-varios;
-  font-size: $med-varia;
-  text-align: $text-align;*/
 }
 main .form-Ingreso {
   display: flex;
@@ -166,7 +159,7 @@ main .fa-user, main .fa-lock {
   }
 }
 main .mensaje-denegado {
-  color: red;
+  color: yellow;
   font-size: 2rem;
   text-align: center;
   font-style: italic;
@@ -278,19 +271,12 @@ main .mensaje-general {
   padding: 0.5rem 1rem;
   box-shadow: 0 0.2rem 0.5rem rgb(0, 92, 13);
   margin: 0.5rem auto;
+  color: #000000;
 }
 @media (max-width: 575px) {
   .filtros {
     max-width: 350px;
   }
-}
-.filtros input {
-  /*
-  outline: $text-nodeco;
-  border: $text-nodeco;
-  border-bottom: 0.1rem solid $color-varios;
-  font-size: $med-varia;
-  text-align: $text-align;*/
 }
 @media (max-width: 575px) {
   .filtros input {
@@ -356,6 +342,7 @@ main .mensaje-general {
   font-size: 2rem;
   margin: 0.5rem;
   gap: 1rem;
+  color: yellow;
 }
 @media (max-width: 768px) {
   #caja-Ayuda #texto-ayuda {
@@ -404,6 +391,7 @@ main .mensaje-general {
   color: rgb(0, 92, 13);
   font-weight: bold;
   padding: 1rem 0.8rem;
+  border: 1px solid #000000;
 }
 @media (max-width: 575px) {
   .tabla1 th {
@@ -412,6 +400,7 @@ main .mensaje-general {
 }
 .tabla1 td {
   padding: 1rem 0.8rem;
+  border: 1px solid #000000;
 }
 @media (max-width: 575px) {
   .tabla1 td {
@@ -427,6 +416,7 @@ main .mensaje-general {
   color: rgb(0, 92, 13);
   font-weight: bold;
   padding: 1rem 0.8rem;
+  border: 1px solid #000000;
 }
 @media (max-width: 575px) {
   .tabla2 th, .tabla3 th {
@@ -435,6 +425,7 @@ main .mensaje-general {
 }
 .tabla2 td, .tabla3 td {
   padding: 1rem 0.8rem;
+  border: 1px solid #000000;
 }
 @media (max-width: 575px) {
   .tabla2 td, .tabla3 td {
@@ -442,7 +433,7 @@ main .mensaje-general {
   }
 }
 @media (max-width: 575px) {
-  .tabla2 .caja-seleccion, .tabla2 .caja-seleccion1, .tabla3 .caja-seleccion, .tabla3 .caja-seleccion1 {
+  .tabla2 .caja-seleccion, .tabla3 .caja-seleccion {
     font-size: 0.5rem !important;
     padding: 2px !important;
     max-width: 50px !important;
@@ -451,12 +442,60 @@ main .mensaje-general {
   }
 }
 
+.observaciones {
+  display: none;
+}
+
+#contenedor-observaciones .form-Observac, #contenedor-observaciones .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 2rem 0.5rem;
+  text-align: center;
+  color: black;
+  border: solid white;
+  gap: 1rem;
+  background-color: white;
+  box-shadow: 0.5rem 0.5rem rgb(5, 251, 37);
+}
+@media (max-width: 575px) {
+  #contenedor-observaciones .form-Observac, #contenedor-observaciones .card {
+    max-width: 500px;
+  }
+}
+#contenedor-observaciones .form-Observac #caja-texto, #contenedor-observaciones .card #caja-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 1.5rem;
+  background-color: white;
+  width: 100%;
+  max-width: 1000px;
+  gap: 0.5rem;
+  border: solid 0.1rem rgb(0, 92, 13);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0.2rem 0.5rem rgb(0, 92, 13);
+  margin: 0.5rem auto;
+}
+#contenedor-observaciones .form-Observac .btn-eliminar, #contenedor-observaciones .card .btn-eliminar {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 footer {
   font-family: "Cormorant Garamond", serif;
   width: 100%;
   text-align: center;
   padding: 1rem 0;
   margin-top: auto;
+  color: white;
 }
 
 /*# sourceMappingURL=estilos.css.map */
