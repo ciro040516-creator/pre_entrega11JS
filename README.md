@@ -16,6 +16,7 @@ Aplicación web interactiva desarrollada para la gestión y registro de repartos
 - **HTML5**: estructura semántica.
 - **CSS3**: estilos y diseño responsivo.
 - **JavaScript (ES6+)**: manipulación del DOM, eventos, asincronismo (`fetch`, Promesas, `async/await`) y almacenamiento local.
+- **SweetAlert**: ventanas emergentes y alertas estilizadas para interacciones con el usuario.
 
 ## 💻 Cómo ejecutar el proyecto
 
