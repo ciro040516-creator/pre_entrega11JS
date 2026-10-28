@@ -1,5 +1,7 @@
 # Sistema de Gestión y Cobranzas
 
+ 🌐 **Link del proyecto en vivo**: (https://github.com/ciro040516-creator/pre_entrega11JS.git).
+
 Aplicación web interactiva desarrollada para la gestión y registro de repartos, cálculo de cobranzas con persistencia de datos y consumo de APIs/JSON local.
 
 ## 🚀 Funcionalidades principales
@@ -23,3 +25,5 @@ Aplicación web interactiva desarrollada para la gestión y registro de repartos
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/ciro040516-creator/pre_entrega11JS.git
+
+2. Abrir el archivo `index.html` utilizando la extensión **Live Server** en Visual Studio Code para evitar problemas de CORS con `fetch`.
