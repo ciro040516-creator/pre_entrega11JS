@@ -335,20 +335,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//Borrar observaciones
-function borrarObservac(e) {
-    if (e) e.preventDefault();
-
-    const textoGuardado = document.getElementById('textoGuardado');
-
-    if (textoGuardado) {
-        textoGuardado.innerHTML = "";
-    }
-
-    localStorage.removeItem('notasDeReparto');
-};
-window.borrarObservac = borrarObservac;
-
 //Enviar observaciones
 window.enviarObservac = function(e) {
     if (e) e.preventDefault();
@@ -399,5 +385,21 @@ window.enviarObservac = function(e) {
     });
 })
 };
+
+//Borrar observaciones
+function borrarObservac(e) {
+    if (e) e.preventDefault();
+
+    const textoGuardado = document.getElementById('textoGuardado');
+
+    if (textoGuardado) {
+        textoGuardado.innerHTML = "";
+    }
+
+    localStorage.removeItem('notasDeReparto');
+};
+window.borrarObservac = borrarObservac;
+
+
 
 

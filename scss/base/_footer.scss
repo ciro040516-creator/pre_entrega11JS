@@ -1,10 +1,16 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixin' as *;
 
 footer{
     font-family: "Cormorant Garamond", serif;
+    font-size: $med-secundaria;
     width: $med-width;
     text-align: $text-align;
     padding: $med-secundaria 0;
     margin-top: auto;
     color: white;
+
+    @include small{
+        font-size: $med-primaria;
+    }
 }

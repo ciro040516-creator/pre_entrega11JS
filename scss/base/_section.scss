@@ -208,8 +208,12 @@ input{
     background-color: $color-body;
     box-shadow: $med-primaria $med-primaria $color-varios;
 
-    @include small{
+    @include mobile{
         max-width: 500px;
+    }
+
+    @include small{
+        max-width: 350px;
     }
 
     #caja-texto{
@@ -224,6 +228,14 @@ input{
     padding: $med-primaria $med-secundaria;
     box-shadow: 0 0.2rem $med-primaria rgb(0, 92, 13);
     margin: $med-primaria auto;
+
+    @include mobile{
+        max-width: 500px;
+    }
+
+    @include small{
+        max-width: 350px;
+    }
     }
 
     .btn-eliminar{
@@ -231,6 +243,8 @@ input{
         margin-top: 1.5rem;
         margin-left: auto;
         margin-right: auto;
+        font-family: $font-terciario;
+        font-size: $med-secundaria;
         }
 
     .btn-enviar{
@@ -238,6 +252,7 @@ input{
         margin-top: $med-terciaria;
         margin-left: auto;
         margin-right: auto;
+        font-family: $font-terciario;
         font-size: $med-secundaria;
         padding: 0.8rem;
 

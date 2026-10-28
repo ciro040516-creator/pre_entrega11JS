@@ -16,7 +16,7 @@
     "Registro": "Añade los remitos/facturas colocando el numero, el nombre, la dirección y el monto final. Estos datos se reflejaran en la tabla inferior. Si cometes un error, usa el botón rojo para eliminarlos y volver a ingresar los datos nuevamente.",
     "Cobranzas": "Gestiona el estado de tus entregas y los pagos recibidos. Los descuentos se aplicaran según la forma de pago indicada y se reflejará el monto final en la columna Final.",
     "Informes": "Revisa el reporte de tus entregas y el dinero recaudado según el método de pago seleccionado.",
-    "Observaciones": "En esta sección podrán informar las novedades como: direcciones erroneas, fallas de los pedidos, cancelaciones, entre otros"
+    "Observaciones": "En esta sección podrán informar las novedades como: direcciones erroneas, fallas de los pedidos, cancelaciones, entre otros. Para enviar los datos añadidos deberas hacer click en Enviar Observaciones y luego colocar el mail. Para borrar deberas hacer click en Eliminar Observaciones y se limpiara tu caja de trabajo. "
 }
 
 }

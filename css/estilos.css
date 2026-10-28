@@ -445,9 +445,14 @@ main .mensaje-general {
   background-color: white;
   box-shadow: 0.5rem 0.5rem rgb(5, 251, 37);
 }
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   #contenedor-observaciones .form-Observac, #contenedor-observaciones .card {
     max-width: 500px;
+  }
+}
+@media (max-width: 575px) {
+  #contenedor-observaciones .form-Observac, #contenedor-observaciones .card {
+    max-width: 350px;
   }
 }
 #contenedor-observaciones .form-Observac #caja-texto, #contenedor-observaciones .card #caja-texto {
@@ -465,17 +470,30 @@ main .mensaje-general {
   box-shadow: 0 0.2rem 0.5rem rgb(0, 92, 13);
   margin: 0.5rem auto;
 }
+@media (max-width: 768px) {
+  #contenedor-observaciones .form-Observac #caja-texto, #contenedor-observaciones .card #caja-texto {
+    max-width: 500px;
+  }
+}
+@media (max-width: 575px) {
+  #contenedor-observaciones .form-Observac #caja-texto, #contenedor-observaciones .card #caja-texto {
+    max-width: 350px;
+  }
+}
 #contenedor-observaciones .form-Observac .btn-eliminar, #contenedor-observaciones .card .btn-eliminar {
   display: block;
   margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
 }
 #contenedor-observaciones .form-Observac .btn-enviar, #contenedor-observaciones .card .btn-enviar {
   display: block;
   margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Bricolage Grotesque", sans-serif;
   font-size: 1rem;
   padding: 0.8rem;
 }
@@ -487,11 +505,17 @@ main .mensaje-general {
 
 footer {
   font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
   width: 100%;
   text-align: center;
   padding: 1rem 0;
   margin-top: auto;
   color: white;
+}
+@media (max-width: 575px) {
+  footer {
+    font-size: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
