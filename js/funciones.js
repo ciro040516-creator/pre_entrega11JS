@@ -231,7 +231,6 @@ let totalFinal = 0;
 
     listaReporte.forEach((resumen) => {
         const monto = Number(resumen.final) || 0;
-        const pedidoNoEntregado = Number(resumen.noentregado) || 0;
 
         totalFinal += monto;
 
