@@ -176,23 +176,6 @@ main .mensaje-denegado {
     font-size: 1.2rem;
   }
 }
-main .mensaje-espontaneo {
-  font-family: "Bricolage Grotesque", sans-serif;
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0.5rem;
-}
-@media (max-width: 768px) {
-  main .mensaje-espontaneo {
-    font-size: 1.5rem;
-  }
-}
-@media (max-width: 575px) {
-  main .mensaje-espontaneo {
-    font-size: 1.2rem;
-  }
-}
 main #seccion-mensajes #mensaje-bienvenida {
   font-family: "Playfair", serif;
   text-align: center;
@@ -487,6 +470,19 @@ main .mensaje-general {
   margin-top: 1.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+#contenedor-observaciones .form-Observac .btn-enviar, #contenedor-observaciones .card .btn-enviar {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+@media (max-width: 575px) {
+  #contenedor-observaciones .form-Observac .btn-enviar, #contenedor-observaciones .card .btn-enviar {
+    padding: 0.5rem;
+  }
 }
 
 footer {

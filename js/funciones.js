@@ -189,6 +189,7 @@ function descuentoAplicado(index, montoInicial) {
 
     const precioInicial = Number(montoInicial);
     let precioACalcular = precioInicial;
+
     if (formaDePago === "Efectivo") {
     precioACalcular = precioInicial * 0.90;
     } else if (formaDePago === "Transferencia") {
@@ -197,6 +198,7 @@ function descuentoAplicado(index, montoInicial) {
     precioACalcular = precioInicial * 1.10;
     } else if (formaDePago === "Regresa"){
         precioACalcular = precioInicial;
+    }
 
     columnaFinal.innerHTML = `<strong>$${precioACalcular.toFixed(2)}</strong>`;
 
@@ -206,14 +208,10 @@ function descuentoAplicado(index, montoInicial) {
     if (listaCobranzas[index]) {
     listaCobranzas[index].formaPago = formaDePago;
     listaCobranzas[index].final = Number(precioACalcular.toFixed(2));
-    
-    // Eliminamos o ajustamos celdaIndicada para evitar el ReferenceError
-        listaCobranzas[index].estado = "Actualizado";
         localStorage.setItem("Datos Lista", JSON.stringify(listaCobranzas));
     }
-    }
 }
-}
+};
 
 //registro de informes/reportes
 function tablaReportes() {
@@ -275,7 +273,21 @@ document.addEventListener("click", (e) => {
 });
 
 //Observaciones
+document.addEventListener("click", (e) => {
+    if (e.target.textContent.trim() === "Observaciones") {
+    
+    e.preventDefault(); 
+    
+    const seccionObservac = document.querySelector("#contenedor-observaciones");
+    if (seccionObservac) {
+        seccionObservac.style.display = (seccionObservac.style.display === "block") ? "none" : "block";
 
+        if (seccionObservac.style.display === "block");
+    }
+}
+});
+
+//Añadir observaciones
 function añadirObservac(e) {
     e.preventDefault();
 
@@ -312,7 +324,6 @@ function añadirObservac(e) {
         });
     }
 };
-
 window.añadirObservac = añadirObservac;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -324,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//Borrar observaciones
 function borrarObservac(e) {
     if (e) e.preventDefault();
 
@@ -335,19 +347,57 @@ function borrarObservac(e) {
 
     localStorage.removeItem('notasDeReparto');
 };
-
 window.borrarObservac = borrarObservac;
 
-document.addEventListener("click", (e) => {
-    if (e.target.textContent.trim() === "Observaciones") {
-    
-    e.preventDefault(); 
-    
-    const seccionObservac = document.querySelector("#contenedor-observaciones");
-    if (seccionObservac) {
-        seccionObservac.style.display = (seccionObservac.style.display === "block") ? "none" : "block";
+//Enviar observaciones
+window.enviarObservac = function(e) {
+    if (e) e.preventDefault();
 
-        if (seccionObservac.style.display === "block");
-    }
+    Swal.fire({
+    title: "Ingrese e-mail para enviar las observaciones:",
+    input: "email",
+    inputPlaceholder: "ejemplo@correo.com",
+    showCancelButton: true,
+    confirmButtonText: "Siguiente",
+    cancelButtonText: "Cancelar"
+    }).then((inputResult) => {
+    if (!inputResult.isConfirmed) return;
+
+    let ingresarMail = inputResult.value ? inputResult.value.trim() : "";
+    const validacionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!ingresarMail|| !validacionEmail.test(ingresarMail)) {
+        Swal.fire({
+        icon: "error",
+        title: "Correo inválido",
+        text: "Por favor, introduce una dirección de correo electrónico correcta."
+    });
+    return;
 }
-});
+    const textoGuardado = document.getElementById('textoGuardado');
+    Swal.fire({
+    title: `Las observaciones se enviará al correo: ${ingresarMail}. Desea confirmar envio?`,
+    icon: "question",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Enviar",
+    denyButtonText: "No enviar"
+}).then((result) => {
+    
+    if (result.isConfirmed) {
+
+        if (textoGuardado) {
+        textoGuardado.innerHTML = "";
+        }
+        localStorage.removeItem('notasDeReparto');
+
+        Swal.fire("¡Enviado!", "success");
+
+    } else if (result.isDenied) {
+        Swal.fire("No se envió la información", "", "info");
+    }
+    });
+})
+};
+
+

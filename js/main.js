@@ -95,18 +95,18 @@ try {
     throw new Error("Usuario y/o contraseña incorrectos");
     }
 
-                    //aviso espontaneo de ingreso
+                    //aviso de ingreso
                     const mainMensaje = document.querySelector('main');
                     mainMensaje.innerHTML =``;
 
-                    const avisoExito = document.createElement("div");
-                    avisoExito.className = "mensaje-espontaneo";
-                    avisoExito.innerHTML = `¡Bienvenido! Ya puedes empezar a cargar los datos de tus repartos en el item 'Registro'.`;
-                    mainMensaje.prepend(avisoExito);
-
-                    setTimeout(() => {
-                    avisoExito.remove();
-                    }, 3000)
+                    Swal.fire({
+                    icon: 'success',
+                    title: '¡Acceso concedido!',
+                    text: "¡Bienvenido! Ya puedes empezar a cargar los datos de tus repartos en el item 'Registro'.",
+                    timer: 3000,
+                    timerProgressBar: true,
+                    showConfirmButton: false
+                    })
 
                     //guia
                     document.getElementById("caja-Ayuda").style.display = "block";

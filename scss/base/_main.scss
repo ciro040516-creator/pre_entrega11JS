@@ -60,22 +60,6 @@ input{
     }
 }
 
-.mensaje-espontaneo{
-    font-family: $font-terciario;
-    text-align: $text-align;
-    font-weight: $font-weight;
-    font-size: $med-cuarta;
-    margin: $med-primaria;
-
-    @include mobile{
-        font-size: $med-terciaria;
-    }
-
-    @include small{
-        font-size: $med-varia;
-    }
-}
-
 #seccion-mensajes{
 #mensaje-bienvenida{
     font-family: $font-primario;

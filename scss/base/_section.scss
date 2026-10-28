@@ -232,5 +232,18 @@ input{
         margin-left: auto;
         margin-right: auto;
         }
-}
+
+    .btn-enviar{
+        display: block;
+        margin-top: $med-terciaria;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: $med-secundaria;
+        padding: 0.8rem;
+
+        @include small{
+        padding: $med-primaria;
+        }
+        }
+    }
 }
